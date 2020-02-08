@@ -1,8 +1,5 @@
 <template>
   <div>
-    <div>
-      <img src="../../static/images/background.png" alt="">
-    </div>
     <canvas id="canvas" width="400" height="400" style="border: 1px solid ">
     </canvas>
   </div>
@@ -29,22 +26,10 @@ export default {
       background.src = '/img/background.472861a2.png';
       console.log('background', background);
       ctx.drawImage(background, -200, -200, 400, 400)
-      let grad
-      ctx.beginPath()
-      // ctx.arc(0, 0, radius, 0, 2 * Math.PI)
-      ctx.fillStyle = 'white'
-      ctx.fill()
-      grad = ctx.createRadialGradient(0, 0, radius * 0.95, 0, 0, radius * 1.05)
-      grad.addColorStop(0, '#333')
-      grad.addColorStop(0.5, 'white')
-      grad.addColorStop(1, '#333')
-      ctx.strokeStyle = grad
-      ctx.lineWidth = radius * 0.1
-      ctx.stroke()
-      ctx.beginPath()
-      ctx.arc(0, 0, radius * 0.1, 0, 2 * Math.PI)
-      ctx.fillStyle = '#333'
-      ctx.fill()
+      ctx.beginPath();
+      ctx.arc(0, 0, 15, 0, 2 * Math.PI);
+      ctx.stroke();
+      ctx.fill();
     },
     drawNumbers (ctx, radius) {
       let ang
@@ -94,6 +79,7 @@ export default {
   },
   mounted () {
     setTimeout(() => {
+      // 113056
       this.canvas = document.getElementById('canvas')
       this.ctx = canvas.getContext('2d')
       let radius = canvas.height / 2

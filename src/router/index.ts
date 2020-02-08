@@ -22,6 +22,11 @@ const routes = [
     path: '/clock',
     name: 'clock',
     component: () => import(/* webpackChunkName: "about" */ '../views/Clock.vue')
+  },
+  {
+    path: '/clock-2',
+    name: 'clockV2',
+    component: () => import(/* webpackChunkName: "about" */ '../views/ClockV2.vue')
   }
 ]
 
