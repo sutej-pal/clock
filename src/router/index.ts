@@ -26,9 +26,13 @@ const routes = [
   {
     path: '/clock-2',
     name: 'clockV2',
-    component: () => import(/* webpackChunkName: "about" */ '../views/ClockV2.vue')
+    component: () => import(/* webpackChunkName: "about" */ '../views/clockV2/index.vue')
+  },
+  {path: '/clock-v3',
+  name: 'clock-v3',
+  component: () => import('../views/clock-v3/index.vue')
   }
-]
+];
 
 const router = new VueRouter({
   mode: 'history',
